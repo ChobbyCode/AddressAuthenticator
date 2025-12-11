@@ -38,7 +38,7 @@ bool februaryCheck(); // I decided to do the code for checking for february in a
 int main() {
 	// While True, So The Program Runs Forever, Until The Close Button Is Pressed
 	while (true) {
-		cout << "Enter a date in the format DD/MM/YYYY: ";
+		cout << "\n\nEnter a date in the format DD/MM/YYYY: ";
 		cin.getline(date, sizeof(date));
 		validateDate(); // START VALIDATION
 	}
