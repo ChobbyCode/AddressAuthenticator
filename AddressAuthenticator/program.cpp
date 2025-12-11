@@ -1,4 +1,6 @@
 
+// Please ignore this program, this is me making a demo program to teach my friend C++
+
 #include <iostream>
 
 using namespace std;
