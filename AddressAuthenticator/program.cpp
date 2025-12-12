@@ -204,11 +204,7 @@ bool sizeCheck() {
 			// monthsLengths[month - 1] 
 			// Note that we are using -1 because arrays are 0 based index, not 1 based index, meaning we start counting months from 1 but the array
 			// does it from 0. to equate for this we do -1.
-			if (day < monthsLengths[month - 1] + 1) {
-				// One extra thing to note is that we are adding monthsLength + 1 this is because otherwise we'd be say for January:
-				// day < 31. and if we had the date 31/01/25 it would return false as less than is not inclusive.
-				// we could solve this by doing <= which is inclusive, or we could just add one to the max size, and instead do:
-				// day < 32. which would be valid
+			if (day <= monthsLengths[month - 1]) {
 				// success
 				return true;
 			}
@@ -241,7 +237,7 @@ bool februaryCheck() {
 	// to use modular in C++ it is the percent (%) symbol.
 	if (year % 4 == 0) {
 		// Leap year
-		if (day < 30) {
+		if (day <= 29) {
 			return true;
 			// 30, as 29 + 1, < is not inclusive, read reason in sizeCheck method if unsure
 		}
@@ -251,7 +247,7 @@ bool februaryCheck() {
 	}
 	else {
 		// Not Leap Year
-		if (day < 29) {
+		if (day <= 28) {
 			return true;
 			// 29, as 28 + 1, < is not inclusive, read reason in sizeCheck method if unsure
 		}
